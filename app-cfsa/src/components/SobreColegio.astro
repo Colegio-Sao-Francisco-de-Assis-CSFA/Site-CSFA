@@ -1,0 +1,146 @@
+---
+//Astro Imports Components
+// import MailOutlineIcon from '@mui/icons-material/MailOutline';
+
+
+
+// Astro component script section
+const segments = [
+  {
+    title: "Educação Infantil",
+    description: "Primeiros passos da jornada acadêmica, preparando para o ingresso no Ensino Fundamental.",
+    image: "/placeholder.svg?height=400&width=400",
+    route:"/Segmentos/Educacao-Infantil",
+  },
+  {
+    title: "Ensino Fundamental - Anos Iniciais",
+    description: "Base sólida de conhecimento, preparando para o ingresso no Ensino Fundamental.",
+    image: "/placeholder.svg?height=400&width=400",
+    route:"/Segmentos/Anos-Iniciais",
+  },
+  {
+    title: "Ensino Fundamental - Anos Finais",
+    description: "Desenvolvimento integral, preparando para o ingresso no Ensino Fundamental.",
+    image: "/placeholder.svg?height=400&width=400",
+    route:"/Segmentos/Anos-Finais",
+  },
+  {
+    title: "Ensino Médio",
+    description: "Nossos alunos terminam esta etapa preparados para o ingresso no Ensino Fundamental.",
+    image: "/placeholder.svg?height=400&width=400",
+    route:"/Segmentos/Ensino-Medio",
+  },
+];
+---
+
+<div class="h-auto w-full flex flex-1 p-5 relative">
+
+  {/* Decorative elements */}
+  <div class="absolute top-14 right-4 w-44 h-44 bg-yellow-400 rounded-xl -z-20 rotate-45"></div>
+  <div class="absolute top-[25%] -left-[10%] w-60 h-60 bg-yellow-400 rounded-full -z-20"></div>
+  <div class="absolute top-0 right-0 w-24 h-full bg-pink-500 -z-30"></div>
+
+
+  {/* Main content */}
+  <main class="h-auto sm:m-auto flex flex-1 flex-col justify-around items-center">
+
+    {/* Segments section */}
+    <section class="mb-20 w-full min-h-[20rem] flex flex-col items-center justify-around  ">
+      <!-- Section Title -->
+      <h2 class="title text-white text-2xl font-bold mb-8">Segmentos</h2>
+
+      <!-- Card Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+        {segments.map((segment) => (
+          <a 
+            href={segment.route} 
+            class="group relative bg-[#121B3D] rounded-lg overflow-hidden  w-[16rem] h-[16rem] hover:shadow-lg transition-shadow block "
+          >
+            <img
+              src={segment.image}
+              alt={segment.title}
+              class="w-full h-[200px] object-cover"
+              width="400"
+              height="400"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 p-6 flex flex-col justify-end">
+              <h3 class="text-white text-[1rem] font-semibold mb-2 w-full">{segment.title}</h3>
+              <p class="text-white/80 text-[10px]">{segment.description}</p>
+              <svg 
+                class="absolute top-4 right-4 w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+              >
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* About section */}
+    <section class="grid grid-cols-1  sm: grid-cols-2  h-auto">
+
+      <div class="text-white flex flex-col gap-6 h-full justify-center px-12">
+
+        <h2 class="title text-2xl font-bold">O Colégio São Francisco de Assis</h2>
+
+        <p class="text-white/60 text-sm">
+          No Colégio São Francisco de Assis, acreditamos que a educação é a chave para a transformação social. 
+          Nossos alunos são jovens protagonistas, preparados para enfrentar os desafios do mundo com ética e 
+          criatividade. Aqui, oferecemos um ambiente acolhedor e uma educação de qualidade, desenvolvendo não 
+          apenas habilidades acadêmicas, mas também valores essenciais.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a 
+            href="#" 
+            class="inline-flex items-center px-4 py-2 border-2 border-white text-white hover:bg-white hover:text-black transition-colors rounded-lg"
+          >
+          <!-- <MailOutlineIcon/> -->
+            Entre em contato
+          </a>
+          <a 
+            href="#" 
+            class="inline-flex items-center px-4 py-2 text-white hover:bg-white/10 transition-colors rounded-lg"
+          >
+            Saiba mais sobre o colégio
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="mx-auto rounded-md overflow-hidden ">
+        <iframe class="w-[28.7rem] h-[16.15rem] shadow-[0_10px_60px_-15px] shadow-[#bbbbbb3b] border-solid border-[1px] border-[#ffffff54] rounded-md" src="https://www.youtube.com/embed/69MfY3vOVV8?autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      
+    </section>
+
+  </div>
+
+  </main>
+</div>
+
+<style>
+  .title{
+    position: relative;
+  }
+
+  .title::after{
+    content: '';
+    position: absolute;
+    z-index: 100;
+    bottom: -5px;
+    width: 60px;
+    height: 4px;
+    background-color: rgb(220, 29, 102);
+    border-radius: 100px;
+    left: -10px;  
+  }
+</style>
