@@ -33,7 +33,7 @@ const segments = [
 ];
 ---
 
-<div class="h-auto w-full flex flex-1 p-5 relative">
+<div class="h-dvh w-full bg-green-500 sm:bg-yellow-300 md:bg-blue-600">
 
   {/* Decorative elements */}
   <div class="absolute top-14 right-4 w-44 h-44 bg-yellow-400 rounded-xl -z-20 rotate-45"></div>
@@ -42,15 +42,16 @@ const segments = [
 
 
   {/* Main content */}
-  <main class="h-auto sm:m-auto flex flex-1 flex-col justify-around items-center">
+  <main class="h-auto w-full">
 
     {/* Segments section */}
-    <section class="mb-20 w-full min-h-[20rem] flex flex-col items-center justify-around  ">
+    <section class="flex flex-col justify-center items-center p-4 w-full h-auto bg-red-500">
       <!-- Section Title -->
       <h2 class="title text-white text-2xl font-bold mb-8">Segmentos</h2>
 
       <!-- Card Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+      <!-- grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  -->
+      <div class="grid grid-cols-1 gap-4">
         {segments.map((segment) => (
           <a 
             href={segment.route} 
@@ -86,29 +87,33 @@ const segments = [
     </section>
 
     {/* About section */}
-    <section class="grid grid-cols-1  sm: grid-cols-2  h-auto">
+    <section class="flex flex-col justify-center items-center p-4 w-full h-auto bg-blue-400 ">
 
-      <div class="text-white flex flex-col gap-6 h-full justify-center px-12">
+      <div class="text-white flex flex-col gap-6 h-full justify-center px-12 max-w-[300px}">
 
-        <h2 class="title text-2xl font-bold">O Colégio São Francisco de Assis</h2>
+        <h2 class="title text-2 font-bold">O Colégio São Francisco de Assis</h2>
 
-        <p class="text-white/60 text-sm">
+        <p class="text-white/60 text-xs w-full">
           No Colégio São Francisco de Assis, acreditamos que a educação é a chave para a transformação social. 
           Nossos alunos são jovens protagonistas, preparados para enfrentar os desafios do mundo com ética e 
           criatividade. Aqui, oferecemos um ambiente acolhedor e uma educação de qualidade, desenvolvendo não 
           apenas habilidades acadêmicas, mas também valores essenciais.
         </p>
-        <div class="flex flex-wrap gap-4">
+
+        <div class="flex flex-1 flex-col w-full gap-4" >
+
+          <!-- inline-flex items-center px-4 py-2 text-white hover:bg-white/10 transition-colors rounded-lg -->
+          
           <a 
             href="#" 
-            class="inline-flex items-center px-4 py-2 border-2 border-white text-white hover:bg-white hover:text-black transition-colors rounded-lg"
+            class="inline-flex flex-row gap-2 p-2 text-[.8rem] bg-white/10 item-center justify-center rounded-lg"
           >
           <!-- <MailOutlineIcon/> -->
             Entre em contato
           </a>
           <a 
             href="#" 
-            class="inline-flex items-center px-4 py-2 text-white hover:bg-white/10 transition-colors rounded-lg"
+            class="inline-flex flex-row gap-2 p-2 text-[.8rem] bg-white/10 item-center justify-center rounded-lg"
           >
             Saiba mais sobre o colégio
           </a>
@@ -116,8 +121,8 @@ const segments = [
       </div>
 
       
-      <div class="mx-auto rounded-md overflow-hidden ">
-        <iframe class="w-[28.7rem] h-[16.15rem] shadow-[0_10px_60px_-15px] shadow-[#bbbbbb3b] border-solid border-[1px] border-[#ffffff54] rounded-md" src="https://www.youtube.com/embed/69MfY3vOVV8?autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="w-full h-full ">
+        <iframe class="w-[90%] h-[40%] shadow-[0_10px_60px_-15px] shadow-[#bbbbbb3b] border-solid border-[1px] border-[#ffffff54] rounded-md" src="https://www.youtube.com/embed/69MfY3vOVV8?autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       
     </section>
