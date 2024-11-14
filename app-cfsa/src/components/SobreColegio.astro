@@ -33,7 +33,7 @@ const segments = [
 ];
 ---
 
-<div class="h-dvh w-full bg-green-500 sm:bg-yellow-300 md:bg-blue-600">
+<div class="h-dvh w-full relative bg-green-500 sm:bg-yellow-300 md:bg-blue-600">
 
   {/* Decorative elements */}
   <div class="absolute top-14 right-4 w-44 h-44 bg-yellow-400 rounded-xl -z-20 rotate-45"></div>
@@ -42,7 +42,7 @@ const segments = [
 
 
   {/* Main content */}
-  <main class="h-auto w-full">
+  <main class="h-auto w-full ">
 
     {/* Segments section */}
     <section class="flex flex-col justify-center items-center p-4 w-full h-auto bg-red-500">
@@ -87,9 +87,9 @@ const segments = [
     </section>
 
     {/* About section */}
-    <section class="flex flex-col justify-center items-center p-4 w-full h-auto bg-blue-400 ">
+    <section class="flex flex-col justify-center items-center p-6 w-full h-auto bg-blue-400 ">
 
-      <div class="text-white flex flex-col gap-6 h-full justify-center px-12 max-w-[300px}">
+      <div class="text-white flex flex-col gap-5 h-full justify-center px-12 max-w-[300px}">
 
         <h2 class="title text-2 font-bold">O Colégio São Francisco de Assis</h2>
 
@@ -121,8 +121,8 @@ const segments = [
       </div>
 
       
-      <div class="w-full h-full ">
-        <iframe class="w-[90%] h-[40%] shadow-[0_10px_60px_-15px] shadow-[#bbbbbb3b] border-solid border-[1px] border-[#ffffff54] rounded-md" src="https://www.youtube.com/embed/69MfY3vOVV8?autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="w-full h-full flex flex-1 items-center justify-center my-6">
+        <iframe class="w-[90%] h-[30dvh] shadow-[0_10px_60px_-15px] shadow-[#bbbbbb3b] border-solid border-[1px] border-[#ffffff54] rounded-md" src="https://www.youtube.com/embed/69MfY3vOVV8?autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       
     </section>
