@@ -1,0 +1,98 @@
+---
+// Header.astro
+import { Image } from 'astro:assets';
+import logo from '../../public/logo-cfsa.svg';
+---
+
+<header class="fixed z-50 top-0 left-0 w-[100dvw] h-[100px]">
+  <div class="relative mx-auto max-w-[1980px] h-full flex items-center justify-between bg-white px-4 py-2 shadow-sm">
+    <div class="flex-shrink-0">
+      <Image src={logo} alt="Logo colégio" class="h-[80px] w-auto" />
+    </div>
+  
+    <nav class="hidden lg:block">
+      <ul class="flex items-center space-x-8">
+        <li><a href="#" class="text-gray-700 hover:text-primary">Inicio</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-primary">Matriculas</a></li>
+        <li class="relative group">
+          <button class="flex items-center space-x-1 text-gray-700 hover:text-primary">
+            <span>Drop Contato</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <ul class="absolute left-0 top-full z-20 min-w-[200px] rounded-lg bg-white p-2 shadow-lg hidden group-hover:block">
+            <li><a href="#" class="block rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100">drop 1</a></li>
+            <li><a href="#" class="block rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100">drop 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  
+    <div class="relative ml-auto mr-4 lg:ml-0 group">
+      <button class="flex items-center space-x-2 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        <span>Area Restrita</span>
+      </button>
+      <ul class="absolute right-0 top-full z-20 mt-2 min-w-[200px] rounded-lg bg-white p-2 shadow-lg hidden group-hover:block">
+        {[1, 2, 3].map((item) => (
+          <li>
+            <a href="#" class="flex items-center space-x-3 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100">
+              <img src={`/logo_botao_${item}.svg`} alt={`Logo botão ${item}`} class="h-6 w-6" />
+              <span>Area Restrita {item}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  
+    <button id="mobileMenuButton" class="rounded-lg p-2 hover:bg-gray-100 lg:hidden" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  
+    <div id="mobileMenu" class="absolute left-0 top-full z-30 w-full bg-white p-4 shadow-lg lg:hidden hidden">
+      <nav>
+        <ul class="space-y-4">
+          <li><a href="#" class="block text-gray-700 hover:text-primary">Inicio</a></li>
+          <li><a href="#" class="block text-gray-700 hover:text-primary">Matriculas</a></li>
+          <li class="relative">
+            <button id="mobileDropContact" class="flex w-full items-center justify-between text-gray-700 hover:text-primary">
+              <span>Drop Contato</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <ul id="mobileDropContactMenu" class="mt-2 space-y-2 pl-4 hidden">
+              <li><a href="#" class="block text-gray-700 hover:text-primary">drop 1</a></li>
+              <li><a href="#" class="block text-gray-700 hover:text-primary">drop 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileDropContact = document.getElementById('mobileDropContact');
+  const mobileDropContactMenu = document.getElementById('mobileDropContactMenu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileDropContact?.addEventListener('click', () => {
+    mobileDropContactMenu?.classList.toggle('hidden');
+    mobileDropContact.querySelector('svg')?.classList.toggle('rotate-180');
+  });
+</script>
+
+<style>
+  /* Add any additional styles here if needed */
+</style>
