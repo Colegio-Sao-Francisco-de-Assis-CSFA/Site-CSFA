@@ -1,5 +1,5 @@
 ---
-const {title} = Astro.props;
+const {title, description} = Astro.props;
 import logoImage from '../../public/logo-cfsa.svg';
 import MenuPrincipal from '../components/MenuPrincipal.astro';
 
@@ -9,7 +9,7 @@ import MenuPrincipal from '../components/MenuPrincipal.astro';
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0";>
@@ -64,37 +64,6 @@ import MenuPrincipal from '../components/MenuPrincipal.astro';
 		/* 60px - 100px top and bottom */
 		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 	}
-
-		*::-webkit-scrollbar {
-		height: 9px;
-		width: 9px;
-		}
-		*::-webkit-scrollbar-track {
-		border-radius: 20px;
-		background-color: #9D9E9C;
-		}
-
-		*::-webkit-scrollbar-track:hover {
-		background-color: #666666;
-		}
-
-		*::-webkit-scrollbar-track:active {
-		background-color: #121B3D;
-		}
-
-		*::-webkit-scrollbar-thumb {
-		border-radius: 5px;
-		background-color: #486EDB;
-		}
-
-		*::-webkit-scrollbar-thumb:hover {
-		background-color: #486EDB;
-		}
-
-		*::-webkit-scrollbar-thumb:active {
-		background-color: #486EDB;
-		}
-
 	*, *:before, *:after {
 		margin: 0;
 		padding: 0;
@@ -115,6 +84,7 @@ import MenuPrincipal from '../components/MenuPrincipal.astro';
 		overflow: hidden;
 		overflow-y: scroll;
 	}
+
 	/* Material Symbol - Google Icon Assets */
 	.material-symbols-outlined {
 	font-variation-settings:
@@ -123,6 +93,34 @@ import MenuPrincipal from '../components/MenuPrincipal.astro';
 	'GRAD' 0,
 	'opsz' 24
 	} 
+
+	
+	@media screen and (min-width: 1024px) {
+		*::-webkit-scrollbar {
+		height: 9px;
+		width: 9px;
+		}
+		*::-webkit-scrollbar-track {
+		border-radius: 20px;
+		background-color: #9D9E9C;
+		}
+		*::-webkit-scrollbar-track:hover {
+		background-color: #666666;
+		}
+		*::-webkit-scrollbar-track:active {
+		background-color: #121B3D;
+		}
+		*::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: #486EDB;
+		}
+		*::-webkit-scrollbar-thumb:hover {
+		background-color: #486EDB;
+		}
+		*::-webkit-scrollbar-thumb:active {
+		background-color: #486EDB;
+		}
+	}
 
 
 </style>
