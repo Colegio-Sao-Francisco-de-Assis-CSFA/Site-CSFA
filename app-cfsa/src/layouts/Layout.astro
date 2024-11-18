@@ -21,7 +21,7 @@ import MenuPrincipal from '../components/MenuPrincipal.astro';
 		
 		<MenuPrincipal/>
 		
-		<div class="container">
+		<div class="container mx-auto max-w-[1980px]">
 			<slot />
 		</div>
 
@@ -76,14 +76,8 @@ import MenuPrincipal from '../components/MenuPrincipal.astro';
 	body{
 		background-color: var(--warm-gray);
 	}
-	.container{
-		margin: 0 auto;
-		width: 100%;
-		max-width: 1980px;
-		height: 100vh;
-		overflow: hidden;
-		overflow-y: scroll;
-	}
+	
+
 
 	/* Material Symbol - Google Icon Assets */
 	.material-symbols-outlined {
