@@ -217,7 +217,6 @@ import logo from '../../public/logo-cfsa.svg';
   const mobileMenu = document.getElementById('mobileMenu');
 
   const mobileDropItem = document.getElementsByClassName('mobileDropItem');
-  const mobileDropListMenu = document.getElementsByClassName('mobileDropListMenu');
 
   mobileMenuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
@@ -227,7 +226,6 @@ import logo from '../../public/logo-cfsa.svg';
   item.addEventListener('click', () => {
     const dropList = item.nextElementSibling;
     dropList?.classList.toggle('hidden');
-    item.querySelector('svg').classList.toggle('rotate-180');
   });
 });
 
